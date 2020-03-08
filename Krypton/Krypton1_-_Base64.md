@@ -3,7 +3,7 @@
 [Krypton Level 0 &rarr; 1](https://overthewire.org/wargames/krypton/krypton0.html)  
   
 For the first level of Krypton, we are given the following ciphertext  
-> S1JZUFRPTklTR1JFQVQ=  
+> `S1JZUFRPTklTR1JFQVQ=`  
   
 This is a [Base64](https://en.wikipedia.org/wiki/Base64) encoded string representing the password.  
   
@@ -21,4 +21,4 @@ print("Decoded string is \\"{}\\"".format(plainText))
 ```  
   
 From this we can see the password for the next level is :  
-> KRYPTONISGREAT  
+> `KRYPTONISGREAT`  

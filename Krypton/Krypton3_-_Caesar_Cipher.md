@@ -3,7 +3,7 @@
 [Krypton Level 2 &rarr; 3](https://overthewire.org/wargames/krypton/krypton2.html)  
   
 For this level of Krypton, we are given the following ciphertext  
-> OMQEMDUEQMEK  
+> `OMQEMDUEQMEK`  
   
 Similar to last level, we are told we need to use a [Ceasar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher). For this I will use [Cryptii](https://cryptii.com/pipes/caesar-cipher) to increment over all possibilities until one jumps out, as we know that the password is in English.   
   
