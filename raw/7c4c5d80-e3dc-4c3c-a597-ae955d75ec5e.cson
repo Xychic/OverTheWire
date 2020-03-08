@@ -1,0 +1,45 @@
+createdAt: "2020-03-06T12:55:12.241Z"
+updatedAt: "2020-03-06T15:18:18.013Z"
+type: "MARKDOWN_NOTE"
+folder: "0b2416c99f33f7c2cd14"
+title: "Krypton3 - Caesar Cipher"
+tags: []
+content: '''
+  # Krypton3 - Caesar Cipher
+  
+  [Krypton Level 2 &rarr; 3](https://overthewire.org/wargames/krypton/krypton2.html)
+  
+  For this level of Krypton, we are given the following ciphertext
+  > `OMQEMDUEQMEK`
+  
+  Similar to last level, we are told we need to use a [Ceasar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher). For this I will use [Cryptii](https://cryptii.com/pipes/caesar-cipher) to increment over all possibilities until one jumps out, as we know that the password is in English. 
+  
+  ![10ed04e6.png](:storage/7c4c5d80-e3dc-4c3c-a597-ae955d75ec5e/10ed04e6.png)
+  
+  Alternative Python script to do the same thing:
+  ```Python
+  def rotate(text, key, mode="ENCRYPT"):
+      if mode == "DECRYPT":
+          key = 26 - key
+      rotated = ""
+      for char in text:
+          if char == " ":
+              rotated += " "
+              continue
+          intVal = ord(char) - ord("A")
+          shiftedVal = (intVal + key) % 26
+          rotated += chr(ord("A") + shiftedVal)
+      return rotated
+  
+  
+  cipherText = input("Enter encrypted string: ")
+  for key in range(26):
+      print("key: {0} - text: {1}".format(key, rotate(cipherText, key, mode="DECRYPT")))
+  ```
+  
+  Reaching a shift of 12 reveals the password as `CAESARISEASY`
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
